@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+	<mappers>
+		<mapper resource="com/explitech/littlecopy/mapper/ConfigMapper.xml" />
+		<mapper resource="com/explitech/littlecopy/mapper/LeadtimeMapper.xml" />
+		<mapper resource="com/explitech/littlecopy/mapper/OrderHistoryMapper.xml" />
+		<mapper resource="com/explitech/littlecopy/mapper/OrderMapper.xml" />
+		<mapper resource="com/explitech/littlecopy/mapper/RevenueMapper.xml" />
+		
+		<mapper resource="com/explitech/littlecopy/mapper/UserMapper.xml" />
+		<mapper resource="com/explitech/littlecopy/mapper/UtilizationMapper.xml" />
+		<mapper resource="com/explitech/littlecopy/mapper/StorageMapper.xml" />
+	</mappers>
+
+</configuration>
