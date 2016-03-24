@@ -7,7 +7,6 @@ CREATE TABLE IF NOT EXISTS `user` (
 PRIMARY KEY (`user_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
-
 CREATE TABLE IF NOT EXISTS `order` (
 `order_id` int(11) NOT NULL auto_increment,
 `order_start_date` datetime NOT NULL,

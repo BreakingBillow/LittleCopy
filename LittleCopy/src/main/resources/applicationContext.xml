@@ -12,13 +12,13 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 
 	<context:annotation-config />
 	
-	<context:component-scan base-package="com.explitech.fiata.rest" />
+	<context:component-scan base-package="com.explitech.littlecopy.rest" />
 	
 	<!-- Declare connection Beans here -->
 	
 	<bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource" autowire-candidate="true" destroy-method="close">  
 	         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>  
-	         <property name="url" value="jdbc:mysql://localhost:3306/fiata"/>  
+	         <property name="url" value="jdbc:mysql://localhost:3306/littlecopy"/>  
 	         <property name="username" value="root"/>  
 	         <property name="password" value="bluerodeo"/>  
 	         <property name="maxActive" value="100"/>  
@@ -43,12 +43,72 @@ http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
 		
 	<!-- Declare all Service Beans here -->
 
-
-
+	<bean id="userService" class="com.explitech.littlecopy.service.impl.UserServiceImpl" scope="prototype">
+	</bean>	
+	
+	<bean id="configService" class="com.explitech.littlecopy.service.impl.ConfigServiceImpl" scope="prototype">
+	</bean>		
+	
+	<bean id="leadtimeService" class="com.explitech.littlecopy.service.impl.LeadtimeServiceImpl" scope="prototype">
+	</bean>	
+	
+	<bean id="orderHistoryService" class="com.explitech.littlecopy.service.impl.OrderHistoryServiceImpl" scope="prototype">
+	</bean>	
+	
+	<bean id="orderService" class="com.explitech.littlecopy.service.impl.OrderServiceImpl" scope="prototype">
+	</bean>	
+	
+	<bean id="revenueService" class="com.explitech.littlecopy.service.impl.RevenueServiceImpl" scope="prototype">
+	</bean>	
+	
+	<bean id="storageService" class="com.explitech.littlecopy.service.impl.StorageServiceImpl" scope="prototype">
+	</bean>	
+	
+	<bean id="utilizationService" class="com.explitech.littlecopy.service.impl.UtilizationServiceImpl" scope="prototype">
+	</bean>	
+						
 	<!--  Declare all Dao Beans Here -->
 	
+	<bean id="userDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.UserMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>
+	
+	<bean id="configDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.ConfigMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>
+	
+	<bean id="leadtimeDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.LeadtimeMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>		
 
+	<bean id="orderDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.OrderMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>
+	
+	<bean id="orderHistoryDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.OrderHistoryMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>
+	
+	<bean id="revenueDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.RevenueMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>		
 
+	<bean id="storagerDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.StorageMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>
+	
+	<bean id="utilizationDao" class="org.mybatis.spring.mapper.MapperFactoryBean" >
+		<property name="mapperInterface" value="com.explitech.littlecopy.dao.UtilizationMapper" />
+		<property name="sqlSessionFactory" ref="sqlSessionFactory"/>		
+	</bean>
+		
 </beans>
 
 
