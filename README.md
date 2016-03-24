@@ -1,0 +1,3 @@
+# LittleCopy
+
+Factory Simulation program
